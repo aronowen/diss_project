@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html land="en">
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/sidemenu.css">
+        <link rel="stylesheet" type="text/css" href="./css/table.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script type = "text/javascript" src = "./js/lib/d3/d3.js"></script>
+        <script type = "text/javascript" src = "./js/lib/bootstrap/bootstrap.js"></script>
+        <script src="https://kit.fontawesome.com/3e84eda346.js" crossorigin="anonymous"></script>
+    </head>
+    <body onload = "closeSM()">
+        <header>
+            <div class = "d-flex" id = "wrapper">
+                <!-- Page Content -->
+                <div id = "page-content-wrapper">
+                    <nav class = "navbar navbar-expand-lg fixed-top navbar-dark bg-dark text-light mb-2">
+                        <!-- Collapse / Expand on side navigation -->
+                        <div class = "btn-purple py-2 px-4" id = "open-btn" style = "font-size: 25px; cursor: pointer;" onclick = "openSM()">&#9776;</div>
+                        <div class = "btn-purple py-2 px-4" id = "close-btn" style = "font-size: 25px; cursor: pointer; display: none;" onclick = "closeSM()">&#9776;</div>
+
+                        <!-- Navigation -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Sign Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div id = "mySidemenu" class = "sidemenu">
+                    <div class = "sm-wrapper">
+                        <a href="index.html" class="list-group-item-action bg-dark text-light">
+                            <i class="fas fa-arrow-right m-2"></i>
+                            Student_A
+                        </a>
+                        <a href="./pages/student_B.html" class="list-group-item-action bg-dark text-light">
+                            <i class="fas fa-arrow-right m-2"></i>
+                            Student_B
+                        </a>
+                        <a href="./pages/student_C.html" class="list-group-item-action bg-dark text-light">
+                            <i class="fas fa-arrow-right m-2"></i>
+                            Student_C
+                        </a>
+                        <a href="./pages/student_D.html" class="list-group-item-action bg-dark text-light">
+                            <i class="fas fa-arrow-right m-2"></i>
+                            Student_D
+                        </a>
+                        <a href="./pages/student_E.html" class="list-group-item-action bg-dark text-light">
+                            <i class="fas fa-arrow-right m-2"></i>
+                            Student_E
+                        </a>
+                        <a href="./pages/student_F.html" class="list-group-item-action bg-dark text-light">
+                            <i class="fas fa-arrow-right m-2"></i>
+                            Student_F
+                        </a>
+                    </div>
+                </div>
+                <!-- /Sidebar -->
+                <main>
+                    <div id = "pg-content" class = "pg-content">
+                        <div class = "fixed-nav-fix">
+                        <h1 class="h2">Dashboard</h1>
+
+                        <!-- Toolbar -->
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                <span data-feather="calendar"></span>
+                                This week
+                            </button>
+                        </div>
+                        <!-- /Toolbar -->
+
+                        <!-- Face -->
+                        <div class = "row">
+                            <div class = "text-center mb-5">
+                                <span id = "face"><i id = "face_Emoji" class="fa fa-10x"></i><span>
+                                <span id = "col_Arrow"><i id = "arrow" class="fa fa-5x"></i></span>
+                            </div>
+                        </div>
+                        <!-- Face -->
+
+                        <!-- Graph -->
+                        <div class = "container">
+                            <div class = "graph-content">
+                                <script = "text/javascript" src = "./js/Student_A/data.js"></script>
+                            </div>
+                        </div>
+                        <!-- /Graph -->
+
+                        <!-- Three Bottom Boxes -->
+                        <div class="row">
+                            <div class="col-lg-4 mb-5">
+                                <h2 class = "text-center">Module Attendance</h2>
+                                <table style = "width: 100%">
+                                    <tr>
+                                        <th class = "text-center"> Module Code </th>
+                                        <th class = "text-center"> Attendance </th>
+                                    </tr>
+                                    <tr class = "text-center" id = "col_3099">
+                                        <td>ICP-3099</td>
+                                        <td class = "text-center" id = "3099">%</td>
+                                    </tr>
+                                    <tr class = "text-center" id = "col_3038">
+                                        <td>ICP-3038</td>
+                                        <td class = "text-center" id = "3038">%</td>
+                                    </tr>
+                                    <tr class = "text-center" id = "col_3029">
+                                        <td>ICP-3029</td>
+                                        <td class = "text-center" id = "3029">%</td>
+                                    </tr>
+                                    <tr class = "text-center" id = "col_3036">
+                                        <td>ICP-3036</td>
+                                        <td class = "text-center" id = "3036">%</td>
+                                    </tr>
+                                    <tr class = "text-center" id = "col_3064">
+                                        <td>IED-3064</td>
+                                        <td class = "text-center" id = "3064">%</td>
+                                    </tr>
+                                </table>
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 mb-5">
+                                <h2 class = "text-center">Overall Attendance</h2>
+                                <table style = "width: 100%">
+                                    <tr>
+                                        <th class = "text-center">Overall</th>
+                                    </tr>
+                                    <tr class = "text-center" id = "col_Overall">
+                                        <td class = "text-center"><h1 id = "overall">%</h1></td>
+                                    </tr>
+                                </table>
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 mb-5">
+                                <h2 class = "text-center">Missed Contacts</h2>
+                                <table style = "width: 100%">
+                                    <tr>
+                                        <th> Module Code </th>
+                                        <th class = "text-center"> Action </th>
+                                    </tr>
+                                    <tr>
+                                        <td>ICP-3099</td>
+                                        <td class = "btn btn-dark w-100"><i class="fas fa-arrow-right"></i></td>
+                                    </tr>
+                                    <tr class = "text-center">
+                                        <td>ICP-3099</td>
+                                        <td class = "btn btn-dark w-100"><i class="fas fa-arrow-right"></i></td>
+                                    </tr>
+                                    <tr class = "text-center">
+                                        <td>ICP-3029</td>
+                                        <td class = "btn btn-dark w-100"><i class="fas fa-arrow-right"></i></td>
+                                    </tr>
+                                    <tr class = "text-center">
+                                        <td>ICP-3029</td>
+                                        <td class = "btn btn-dark w-100"><i class="fas fa-arrow-right"></i></td>
+                                    </tr>
+                                    <tr class = "text-center">
+                                        <td>IED-3064</td>
+                                        <td class = "btn btn-dark w-100"><i class="fas fa-arrow-right"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /Three Bottom Boxes -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </header>
+        <script type = "application/javascript" src="./js/lib/bootstrap/bootstrap.bundle.min.js"></script>
+        <script type = "application/javascript" src="./js/lib/jQuery/jquery.js"></script>
+        <script type = "application/javascript" src="./js/sidemenu.js"></script>
+        <script type = "application/javascript" src="./js/Student_A/module_data.js"></script>
+    </body>
+</html>
